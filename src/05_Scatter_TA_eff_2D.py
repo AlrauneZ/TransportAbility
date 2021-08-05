@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from Distributions import TA_POR_Distribution
-from Class_TA_Upscaling import TA_POR_Upscaling
+from TA_Upscaling import TA_POR_Upscaling
 
 ###############################################################################
 ### Load or calculate data

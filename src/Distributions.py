@@ -332,7 +332,9 @@ class TA_POR_Distribution():
             raise ValueError("read data and run statistical analysis first")
 
         compress_condition=(self.stats['number_in_bin']>self.nmin)*(self.por_range>self.por_con_min)
-  
+        # print(compress_condition.shape)
+        # print(self.stats['mean'].shape)
+        
         self.por_compress = np.compress(compress_condition,self.por_range,axis=0)
 
         self.stats['mean']= np.compress(compress_condition,self.stats['mean'],axis=0)
@@ -577,8 +579,8 @@ class TA_POR_Distribution():
 
         self.interpolate_ta_log_mean(px = self.por_range,**kwargs)
         self.interpolate_ta_log_std(px = self.por_range,**kwargs)
-        compress_condition  = self.stats_compress()
-
+        compress_condition=(self.stats['number_in_bin']>self.nmin)*(self.por_range>self.por_con_min)
+ 
         ta_rand_values = np.ones([len(self.por_range),nrand])
         for ip,pi in enumerate(self.por_range):           
             if compress_condition[ip]:                

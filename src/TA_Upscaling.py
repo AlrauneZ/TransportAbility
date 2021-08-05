@@ -7,9 +7,8 @@ from Distributions import Porosity_Distribution, TA_POR_Distribution, TA_Distrib
 
 DEF_settings = dict(
      res0 = 2,
-     pstd_r2=0.15,
-     pmean=0.3, 
-     por_con_min=0.07,
+     pstd_r0 = 0.15,
+     por_con_min = 0.07,
      nmin = 20,
      dp = 0.02,
      )
@@ -30,14 +29,17 @@ class TA_POR_Upscaling():
                  dim = 2,
                  res = 2,
                  n_network = 4,   
-                 # pstd_r2=0.15,
-                 # pmean=0.3, 
-                 # pstd=0.15,
+                 pmean = 0.3, 
+                 pstd = 0.15,
+                 scale_std = True,
                  **settings
                  ):
 
         self.dim = dim
         self.res = res
+        self.pmean = pmean
+        self.pstd = pstd
+        
         self.n_network = n_network
         
         self.settings=copy.copy(DEF_settings) 
@@ -46,10 +48,10 @@ class TA_POR_Upscaling():
         self.por = None
         self.ta = None
         
-        self.ta_gmean = None
-        
+        self.ta_gmean = None        
         self.scale  = self.res/self.settings['res0']*self.n_network
-        self.set_por_dist_theory()
+        
+        self.set_por_dist_theory(scale_std = scale_std)
 
     ###########################################################################
 
@@ -126,11 +128,24 @@ class TA_POR_Upscaling():
 
     ###########################################################################
 
-    def set_por_dist_theory(self):
+    def set_por_dist_theory(self,
+                            pmean = False,
+                            pstd = False,
+                            scale_std = True,
+                            ):
         
+        if pmean:
+            self.pmean = pmean
+        if pstd:
+            self.pstd = pstd
+
+        if scale_std:
+            self.pstd = self.settings['pstd_r0']/np.power(self.scale,0.25*self.dim)      
+  
         self.POR_theory = Porosity_Distribution(
-            pmean = self.settings['pmean'],
-            pstd = self.settings['pstd_r2']/np.power(self.scale,0.25*self.dim))      
+            pmean = self.pmean,
+            pstd = self.pstd,
+            )
         
         return self.POR_theory.pmean, self.POR_theory.pstd
 
@@ -167,15 +182,10 @@ class TA_POR_Upscaling():
                            ta_gmean0 = 0.022,
                            ta_log_std0 = 2, 
                            ta_log_min = 0.05,
-                           # fromdata = False,
                            ):
 
         ta_log_std  = np.max(ta_log_min,ta_log_std0/np.power(self.scale,0.25*self.dim))
         ta_pcon  = self.POR_theory.total_connectivity()
-
-        # if fromdata:
-        #     ta_gmeans = [0.022, 0.037, 0.033, 0.0254, 0.024854683658313, 0.022498146673905, 0.022370404013675, 0.020395215023163, 0.020285488946597]
-        #     ta_gmean = ta_gmeans[int(0.5*np.log2(self.scale))]       
      
         self.TA_theory=TA_Distribution(
             ta_gmean = ta_gmean0,
