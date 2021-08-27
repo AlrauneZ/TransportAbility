@@ -27,7 +27,6 @@ lw = 2
 textsize = 8
 plt.close('all')
 
-
 plt.figure(figsize=[7.5,2.5])
 ax1=plt.subplot(121)  
 ax2=plt.subplot(122)
@@ -49,12 +48,12 @@ for ii,res in enumerate(resolutions):
     ### Statistics of ensemble porosity -> match to input statistics?
 
     ENS_TA1.set_por_dist_theory()
-    ax1.plot(px,ENS_TA1.POR_theory.pdf_porosity(px),ls='-',c='C{}'.format(ii),alpha = 0.5,lw=lw,zorder = 6-ii) #,label=label###theoretical pdf of ensemble
+    ax1.plot(px,ENS_TA1.POR_theory.pdf_porosity(px),ls='-',c='C{}'.format(ii),alpha = 0.5,lw=lw,zorder = 6-ii) 
     print('Porosity stats (Theory): \n pm = {:.2f}, psdt = {:.5f}'.format(ENS_TA1.POR_theory.pmean,ENS_TA1.POR_theory.pstd))
     
     ### statistics of ensemble porosity
     ENS_TA1.set_por_dist_data() 
-    ax1.plot(px,ENS_TA1.POR_data.pdf_porosity(px),ls='-',c='C{}'.format(ii),lw=lw,zorder = 12-ii,label=label) ### pdf with ensemble por statistics
+    ax1.plot(px,ENS_TA1.POR_data.pdf_porosity(px),ls='-',c='C{}'.format(ii),lw=lw,zorder = 12-ii,label=label) 
     print('Porosity stats (Ens): \n pm = {:.2f}, psdt = {:.5f}'.format(ENS_TA1.POR_data.pmean,ENS_TA1.POR_data.pstd))
 
     ### -------------------------------------------------------------------------------------------------------
@@ -83,10 +82,10 @@ ax2.set_xscale('log')
 ax2.set_xlabel(r'Transport ability $\bar {ta}$',fontsize=textsize)
 ax2.set_ylabel(r'Ensemble pdf  $P_{\bar {ta}}(\bar \theta)$',fontsize=textsize)
 ax2.tick_params(axis="both",which="major",labelsize=textsize)
-ax2.legend(loc = 'upper left',fontsize=textsize)#,ncol=2)
+ax2.legend(loc = 'upper left',fontsize=textsize)
 ax2.grid(True)
 ax2.text(-0.13,-0.13,'(c)', bbox=dict(facecolor='w', alpha=1,boxstyle='round'),fontsize=textsize, transform=ax2.transAxes)
 
 plt.tight_layout()
-plt.savefig('../results/Fig06_pdf_marginal_TA_por_2D.png',dpi=300)   
+# plt.savefig('../results/Fig06_pdf_marginal_TA_por_2D.png',dpi=300)   
 plt.savefig('../results/Fig06_pdf_marginal_TA_por_2D.pdf')   

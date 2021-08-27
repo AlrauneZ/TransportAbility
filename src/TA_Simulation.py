@@ -25,7 +25,7 @@ DEF_DATA = dict(
 class TA_Ensemble_Simulation:
     
     """
-    Class to generate Ensemble of networks consisting of n_network^dim nodes:
+    Class to generate ensemble of networks consisting of n_network^dim nodes:
     with random porosity values from normal distribution, subsequent 
     connectivity and transport ability generated from porosity values
     and calculation of network porosity and transport ability for each network    
@@ -550,7 +550,6 @@ class Network_Flow:
 
         ###average gradient over domain given input and output pressure over distance        
         self.gradp = (self.pressure_out-self.pressure_in)
-        # self.gradp = (self.pressure_out-self.pressure_in)/ (self.Nx-1) 
 
         ### Effective transport ability as ratio of simulated average flux over mean gradient        
         self.ta_eff = self.q_out/self.gradp

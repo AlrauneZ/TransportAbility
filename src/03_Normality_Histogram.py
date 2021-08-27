@@ -3,7 +3,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as ss
-
 from Distributions import TA_POR_Distribution
 
 ###############################################################################
@@ -67,8 +66,7 @@ for ii,pi in enumerate(por_ex):
     ax.set_xlim([data_log_range[0],data_log_range[-1]])
     ax.tick_params(axis="both",which="major",labelsize=textsize)
 
-
 plt.tight_layout()
-plt.savefig('../results/Fig03_Normality_Histogram',dpi=300)   
+# plt.savefig('../results/Fig03_Normality_Histogram',dpi=300)   
 plt.savefig('../results/Fig03_Normality_Histogram.pdf')   
 

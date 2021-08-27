@@ -2,7 +2,6 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-# from Class_TransportAbility import TA_POR_Distribution
 from Distributions import TA_POR_Distribution
 
 ###############################################################################
@@ -38,11 +37,11 @@ plt.axis([0.05,0.9,ta_min,ta_max])
 plt.yscale('log')
 plt.grid(True)
 plt.legend(loc = 'lower right',fontsize=textsize)
-plt.xlabel(r'Porosity $\theta$',fontsize=textsize) # plt.xlabel('Connected Porosity')
+plt.xlabel(r'Porosity $\theta$',fontsize=textsize) 
 plt.ylabel(r'Transport ability $ta_{{con}}(\theta)$',fontsize=textsize)
 plt.tick_params(axis="both",which="major",labelsize=textsize)
 
 plt.tight_layout()
-plt.savefig('../results/Fig02_Scatter_TA_Data.png',dpi=300)   
+# plt.savefig('../results/Fig02_Scatter_TA_Data.png',dpi=300)   
 plt.savefig('../results/Fig02_Scatter_TA_Data.pdf')   
 

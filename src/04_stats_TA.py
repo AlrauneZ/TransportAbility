@@ -26,20 +26,20 @@ fig = plt.figure(figsize = [7.5,2.5])
 ax1 = fig.add_subplot(1,2,1)
 ax2 = fig.add_subplot(1,2,2)
 
-ax1.plot(TA_con.por_compress,TA_con.stats['log-mean'],ls=':',c='C0',lw=1,marker='o')#,label='data value $p_1$',zorder =10)
-ax2.plot(TA_con.por_compress,TA_con.stats['log-std'],ls=':',c='C1',lw=1,marker='s')#,label='data value $p_2$',zorder =11)
+ax1.plot(TA_con.por_compress,TA_con.stats['log-mean'],ls=':',c='C0',lw=1,marker='o')
+ax2.plot(TA_con.por_compress,TA_con.stats['log-std'],ls=':',c='C1',lw=1,marker='s')
 
 ax1.grid(True)
-ax1.set_ylabel('$a$ - mean of log-ta',fontsize=textsize) #,color='C1'
-ax1.set_xlabel(r'Porosity $\theta$',fontsize=textsize) # plt.xlabel('Connected Porosity')
+ax1.set_ylabel('$a$ - mean of log-ta',fontsize=textsize) 
+ax1.set_xlabel(r'Porosity $\theta$',fontsize=textsize) 
 ax1.tick_params(axis="both",which="major",labelsize=textsize)
 
-ax2.set_xlabel(r'Porosity $\theta$',fontsize=textsize) # plt.xlabel('Connected Porosity')
-ax2.set_ylabel('$b$ - std of log-ta',fontsize=textsize)#,color='C0'
+ax2.set_xlabel(r'Porosity $\theta$',fontsize=textsize)
+ax2.set_ylabel('$b$ - std of log-ta',fontsize=textsize)
 ax2.tick_params(axis="both",which="major",labelsize=textsize)
 ax2.grid(True)
 
 plt.tight_layout()
-plt.savefig('../results/Fig04_stats_TA.png',dpi=300)   
+# plt.savefig('../results/Fig04_stats_TA.png',dpi=300)   
 plt.savefig('../results/Fig04_stats_TA.pdf')   
 

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
 import numpy as np
-
 from Distributions import Porosity_Distribution
 
 ###############################################################################
@@ -56,17 +55,15 @@ ax.fill_between(px,M3.pdf_porosity(px),M3.pdf_porosity_connected(px),color='C9',
 
 ax.set_xlabel(r'Porosity $\theta$',fontsize=textsize)
 ax.set_ylabel('Probability',fontsize=textsize)
-ax.legend(loc='upper right',fontsize=textsize+2)
+ax.legend(loc='upper right',fontsize=textsize)
 ax.tick_params(axis="both",which="major",labelsize=textsize)
 ax.grid(True)
 ax.set_xlim([0,0.6])  
 ax.set_ylim([0,7])  
 
 plt.tight_layout()
-plt.savefig('../results/Fig01_pdf_porosity.png',dpi=300)   
+# plt.savefig('../results/Fig01_pdf_porosity.png',dpi=300)   
 plt.savefig('../results/Fig01_pdf_porosity.pdf')   
-
-
 
 print("Total dis-connectivity for n=2:  {:.3f}".format(1-M1.connectivity_total))
 print("Total dis-connectivity for n=8:  {:.3f}".format(1-M2.connectivity_total))
