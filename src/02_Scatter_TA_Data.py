@@ -31,14 +31,14 @@ plt.scatter(TA_con.por,TA_con.ta,s=5,edgecolors ='k',linewidths=0.15,c='gold',zo
 
 for ii,pi in enumerate(por_ex):
     plt.plot([pi,pi],[ta_min,ta_max],ls = lso[ii],color='0.5',lw=2,zorder=1,label=r'$\theta = {:.2f}$'.format(pi))
-plt.plot(px,px,c='0.5',ls=':',label=r'$ta_{{con}}^{max} = \theta$')
+plt.plot(px,px,c='0.5',ls=':',label=r'$\chi_{{con}}^{max} = \theta$')
 
 plt.axis([0.05,0.9,ta_min,ta_max])
 plt.yscale('log')
 plt.grid(True)
 plt.legend(loc = 'lower right',fontsize=textsize)
 plt.xlabel(r'Porosity $\theta$',fontsize=textsize) 
-plt.ylabel(r'Transport ability $ta_{{con}}(\theta)$',fontsize=textsize)
+plt.ylabel(r'Transport-ability $\chi_{{con}}(\theta)$',fontsize=textsize)
 plt.tick_params(axis="both",which="major",labelsize=textsize)
 
 plt.tight_layout()

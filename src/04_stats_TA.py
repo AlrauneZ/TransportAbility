@@ -30,12 +30,12 @@ ax1.plot(TA_con.por_compress,TA_con.stats['log-mean'],ls=':',c='C0',lw=1,marker=
 ax2.plot(TA_con.por_compress,TA_con.stats['log-std'],ls=':',c='C1',lw=1,marker='s')
 
 ax1.grid(True)
-ax1.set_ylabel('$a$ - mean of log-ta',fontsize=textsize) 
+ax1.set_ylabel(r'$a$ - mean of $\log-\chi$',fontsize=textsize) 
 ax1.set_xlabel(r'Porosity $\theta$',fontsize=textsize) 
 ax1.tick_params(axis="both",which="major",labelsize=textsize)
 
 ax2.set_xlabel(r'Porosity $\theta$',fontsize=textsize)
-ax2.set_ylabel('$b$ - std of log-ta',fontsize=textsize)
+ax2.set_ylabel(r'$b$ - std of $\log-\chi',fontsize=textsize)
 ax2.tick_params(axis="both",which="major",labelsize=textsize)
 ax2.grid(True)
 

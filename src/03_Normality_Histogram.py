@@ -49,8 +49,9 @@ for ii,pi in enumerate(por_ex):
     ax.plot(data_range,Npdf,c='royalblue', lw=lw, label='Normal')
     ax.plot(data_range,LNpdf,c='forestgreen', lw=lw, label='Log-Normal')
 
-    ax.set_xlabel('Transport ability',fontsize=textsize)
-    ax.set_ylabel('Normalized Frequency/Density',fontsize=textsize)
+    ax.set_xlabel(r'Transport-ability $\chi$',fontsize=textsize)
+    if ii == 0:
+        ax.set_ylabel('Norm. Frequency/Density',fontsize=textsize)
     ax.legend(loc='best',fontsize=textsize)
 
     ax.set_title(r'${:.2f}\leq \theta \leq {:.2f}$     ($n={:.0f}$)'.format(pi-0.5*TA_con.dp,pi+0.5*TA_con.dp,nn),fontsize=textsize+1)
@@ -61,8 +62,9 @@ for ii,pi in enumerate(por_ex):
     ax.hist(data_log,bins=nbins,color=cc[ii],edgecolor='k',density=1,label='data')
     ax.plot(data_log_range,Npdf_log,c='forestgreen', lw=lw, label='Log-Normal pdf')
 
-    ax.set_xlabel('Log-transport ability',fontsize=textsize)
-    ax.set_ylabel('Normalized Frequency/Density',fontsize=textsize)
+    ax.set_xlabel(r'Log transport-ability  $\log-\chi$',fontsize=textsize)
+    if ii == 0:
+        ax.set_ylabel('Norm. Frequency/Density',fontsize=textsize)
     ax.set_xlim([data_log_range[0],data_log_range[-1]])
     ax.tick_params(axis="both",which="major",labelsize=textsize)
 

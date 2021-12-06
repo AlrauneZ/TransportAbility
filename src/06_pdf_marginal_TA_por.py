@@ -71,7 +71,7 @@ for ii,res in enumerate(resolutions):
     
 ax1.set_xlim([0.15,.45])  
 ax1.set_xlabel(r'Porosity $\bar \theta$',fontsize=textsize)
-ax1.set_ylabel(r'Ensemble pdf  $P_{\bar \theta}$',fontsize=textsize)
+ax1.set_ylabel(r'Ensemble pdf $P_{\bar \theta}$',fontsize=textsize)
 ax1.legend(loc='upper left',fontsize=textsize)#,ncol=2)
 ax1.tick_params(axis="both",which="major",labelsize=textsize)
 ax1.grid(True)
@@ -79,8 +79,8 @@ ax1.text(-0.13,-0.13,'(b)', bbox=dict(facecolor='w', alpha=1,boxstyle='round'),f
 
 ax2.set_xlim([0.0009,0.1])
 ax2.set_xscale('log')
-ax2.set_xlabel(r'Transport ability $\bar {ta}$',fontsize=textsize)
-ax2.set_ylabel(r'Ensemble pdf  $P_{\bar {ta}}(\bar \theta)$',fontsize=textsize)
+ax2.set_xlabel(r'Transport-ability $\bar{\chi}$',fontsize=textsize)
+ax2.set_ylabel(r'Ensemble pdf $P_{\bar{\chi}}(\bar \theta)$',fontsize=textsize)
 ax2.tick_params(axis="both",which="major",labelsize=textsize)
 ax2.legend(loc = 'upper left',fontsize=textsize)
 ax2.grid(True)

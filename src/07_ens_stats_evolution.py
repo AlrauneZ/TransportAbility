@@ -43,14 +43,14 @@ for ii, data in enumerate([data_2D,data_3D]):
     cv_log_ta_theory = ta_std_r2/np.power(nn/2,0.25*dim)
 
     ax1.plot(nn,cv_por,'d',c='C{}'.format(ii),zorder = 10,label = r'$\sigma_n/\mu\ (\theta)$ - {}D'.format(dim))    ### log-ta variance
-    ax1.plot(nn,gcv_ta,'o',c='C{}'.format(ii),zorder = 10,label = r'$GCV\ (ta)$ - {}D'.format(dim))     ### log-ta variance   
+    ax1.plot(nn,gcv_ta,'o',c='C{}'.format(ii),zorder = 10,label = r'$GCV\ (\chi)$ - {}D'.format(dim))     ### log-ta variance   
     ax1.plot(nn,cv_por_theory,'k-',zorder = 2)     
     ax1.plot(nn,por_level*np.ones_like(nn),c='0.6',ls='--',zorder = 0)  
     ax1.plot(nn,cv_log_ta_theory,'k:',zorder = 3)   
     ax1.plot(nn,ta_level*np.ones_like(nn),c='0.6',ls='--',zorder = 0)  
         
     ax2.plot(nd,cv_por,'d',c='C{}'.format(ii),zorder = 10,label = r'$\sigma_n/\mu\ (\theta)$ - {}D'.format(dim))    ### log-ta variance
-    ax2.plot(nd,gcv_ta,'o',c='C{}'.format(ii),zorder = 10,label = r'$GCV\ (ta)$ - {}D'.format(dim))     ### log-ta variance   
+    ax2.plot(nd,gcv_ta,'o',c='C{}'.format(ii),zorder = 10,label = r'$GCV\ (\chi)$ - {}D'.format(dim))     ### log-ta variance   
     ax2.plot(nd,cv_por_theory,'k-',zorder = 2)    
     ax2.plot(nd,por_level*np.ones_like(nn),c='0.6',ls='--',zorder = 0)  
     ax2.plot(nd,cv_log_ta_theory,'k:',zorder = 3) 

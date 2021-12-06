@@ -62,11 +62,11 @@ for ii, std in enumerate(stds):
         ax.text(0.1,0.9,r'$\mu=0.1; 0.2; 0.3; 0.4$', bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
 
     if ii ==0:
-        ax.set_ylabel('Transport ability $ta$',fontsize=textsize)
+        ax.set_ylabel('Transport-ability $\chi$',fontsize=textsize)
     ax.set_xlabel(r'Porosity $\theta$',fontsize=textsize)
     ax.set_yscale('log')
     ax.set_ylim([0.00098,0.2])
-    ax.text(0.6,0.1,r'$r_{{ta}} = {}\mu m$'.format(TAP.res), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
+    ax.text(0.6,0.1,r'$r_{{\chi}} = {}\mu m$'.format(TAP.res), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
     ax.text(0.1,0.8,r'$\sigma={:.4f}$'.format(TAP.POR_theory.pstd), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
     ax.tick_params(axis="both",which="major",labelsize=textsize)
 
@@ -89,11 +89,11 @@ print('TA stats (Data): \n a = {:.4f}, b = {:.5f}'.format(TAP.TA_data.ta_gmean,T
 TAP.ta_upscaling(tay,px,factor = 100)   
 ax.contourf(xx,yy,TAP.ta_por_cloud.T,cmap='Blues',levels = 15)
 ax.text(0.1,0.9,r'$\mu={}$'.format(TAP.POR_theory.pmean), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
-ax.set_ylabel('Transport ability $ta$',fontsize=textsize)
+ax.set_ylabel(r'Transport-ability $\chi$',fontsize=textsize)
 ax.set_xlabel(r'Porosity $\theta$',fontsize=textsize)
 ax.set_yscale('log')
 ax.set_ylim([0.00098,0.2])
-ax.text(0.6,0.1,r'$r_{{ta}} = {}\mu m$'.format(TAP.res), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
+ax.text(0.6,0.1,r'$r_{{\chi}} = {}\mu m$'.format(TAP.res), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
 ax.text(0.1,0.8,r'$\sigma={:.4f}$'.format(TAP.POR_theory.pstd), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
 ax.tick_params(axis="both",which="major",labelsize=textsize)
 
@@ -127,7 +127,7 @@ for ii, res in enumerate(resolutions):
     ax.set_yscale('log')
     ax.set_ylim([0.00098,0.2])
 
-    ax.text(0.6,0.1,r'$r_{{ta}} = {}\mu m$'.format(TAP.res*TAP.n_network), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
+    ax.text(0.6,0.1,r'$r_{{\chi}} = {}\mu m$'.format(TAP.res*TAP.n_network), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
     ax.text(0.1,0.8,r'$\sigma_{{{}}}={:.4f}$'.format(TAP.res*TAP.n_network,TAP.POR_theory.pstd), bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
     ax.tick_params(axis="both",which="major",labelsize=textsize)
 

@@ -59,7 +59,7 @@ plt.text(-0.1,-0.1,'(a)', bbox=dict(facecolor='w', alpha=1,boxstyle='round'),fon
 plt.text(0.1,0.9,'2D', bbox=dict(facecolor='w', alpha=0.5,boxstyle='round'),fontsize=textsize, transform=ax.transAxes)
 plt.legend(bbox_to_anchor=(0.65, 0.515),fontsize=textsize,framealpha=1)
 plt.xlabel(r'Porosity $\bar\theta$',fontsize=textsize) 
-plt.ylabel(r'Transport ability $\bar{ta}(\bar\theta)$',fontsize=textsize)
+plt.ylabel(r'Transport-ability $\bar{\chi}(\bar\theta)$',fontsize=textsize)
 plt.tick_params(axis="both",which="major",labelsize=textsize)
 
 plt.tight_layout()
